@@ -1,0 +1,21 @@
+{
+  "name": "Narun & Ussa Wedding Invitation",
+  "short_name": "Wedding Invite",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fce4ec",
+  "theme_color": "#d63384",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./assets/CX7_7939.JPG",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./assets/CX7_7939.JPG",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

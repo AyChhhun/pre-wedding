@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="km">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fce4ec">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#fce4ec">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#fce4ec">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+    <title>សិរីមង្គលអាពាហ៍ពិពាហ៍ | Narun & Ouksa</title>
+
+    <!-- Fonts (Hosted Locally) -->
+    <!-- Moul, Moulpali, Battambang, Great Vibes are included in style.css -->
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Telegram Web App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- Cover Screen Card -->
+    <div id="cover-card" class="card-container cover-card">
+        <div class="overlay"></div>
+        <div class="cover-content">
+            <h1 class="cover-title">សិរីសួស្ដីអាពាហ៍ពិពាហ៍</h1>
+            <div class="cover-names">
+                <span>ឈុន</span> <span class="heart">❤️</span> <span>ម៉ីលីញ</span>
+            </div>
+            <p class="welcome-text">សូមគោរពអញ្ញើញ</p>
+            <p class="guest-name"></p>
+            <div class="cover-footer">
+                <p class="cover-date">ថ្ងៃអាទិត្យ ទី២២ ខែមីនា ឆ្នាំ២០២៦</p>
+                <button class="open-invite-btn"
+                    onclick="sessionStorage.setItem('inviteOpened','1'); document.getElementById('save-the-date').scrollIntoView({behavior: 'smooth'}); startMusic();">
+                    💌 បើកធៀប
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Floral Background (iPhone Fix) -->
+    <div class="fixed-floral-bg"></div>
+
+    <!-- Save the Date Section -->
+    <div id="save-the-date" class="card-container save-date-card">
+        <div class="heart-photo-wrapper scroll-animate animate-scale">
+            <div class="heart-photo">
+                <img src="assets/CX7_7941.jpg" alt="Groom & Bride Photo">
+            </div>
+        </div>
+        <!-- <p class="save-date-label scroll-animate">Save the Date</p> -->
+        <div class="save-date-divider scroll-animate"></div>
+        <div class="save-date-names scroll-animate">
+            <span>ណារុន</span>
+            <span class="connector-text">ជាគូនិង</span>
+            <span>ឧស្សា</span>
+        </div>
+        <!-- <p class="save-date-date scroll-animate">March 22<sup>nd</sup> 2026</p> -->
+        <p class="save-date-khmer scroll-animate">ថ្ងៃអាទិត្យ ទី២២ ខែមីនា ឆ្នាំ២០២៦</p>
+
+        <!-- Countdown -->
+        <section class="countdown-section animate-scale">
+            <h4>រាប់ថយក្រោយ</h4>
+            <div id="countdown" class="countdown">
+                <div class="chk-time"><span id="days">00</span> ថ្ងៃ</div>
+                <div class="chk-time"><span id="hours">00</span> ម៉ោង</div>
+                <div class="chk-time"><span id="minutes">00</span> នាទី</div>
+                <div class="chk-time"><span id="seconds">00</span> វិនាទី</div>
+            </div>
+        </section>
+    </div>
+
+    <div id="invitation-card" class="card-container">
+        <!-- Floral Decorations (CSS Background or overlay elements could handle this, but explicit elements allow for animation) -->
+        <div class="floral-corner top-left"></div>
+        <div class="floral-corner top-right"></div>
+        <div class="floral-corner bottom-left"></div>
+        <div class="floral-corner bottom-right"></div>
+
+        <div class="card-content">
+            <!-- Header -->
+            <header class="wedding-header scroll-animate">
+                <div class="symbol-top">
+                    <img src="assets/chhun.png" alt="Chhun" class="chhun-symbol">
+                </div>
+                <h1 class="main-title">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
+                <!-- <h2 class="sub-title">Wedding Invitation</h2> -->
+            </header>
+
+            <!-- Couples -->
+            <section class="couples-section animate-scale">
+                <div class="couple-names">
+                    <div class="groom">
+                        <h3 class="khmer-name"><span class="title">លោក</span> អ៊ុង ម៉ាល់</h3>
+                        <h3 class="khmer-name"><span class="title">អ្នកស្រី</span> រស់ គិ</h3>
+                    </div>
+                    <div class="bride">
+                        <h3 class="khmer-name"><span class="title">អ្នកស្រី</span> ស៊ុត ភុច</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Parents -->
+            <section class="parents-section scroll-animate">
+                <div class="parents-group">
+                    <h4 class="parents-label">មានកិត្តិយសសូមគោរពអញ្ជើញ</h4>
+                    <div class="parents-list">
+                        <p>ឯកឧត្តម លោកជំទាវ លោកឧកញ៉ា លោក លោកស្រី</p>
+                        <p>អ្នកនាងកញ្ញា ភ្ញៀវកិត្តិយសទាំងអស់ ជាទីគោរពរាប់អាន</p>
+                    </div>
+                    <p class="invitation-text">ចូលរួមក្នុងពិធីពិសាភោជនាហារកិត្តិយសនៃអាពាហ៍ពិពាហ៍</p>
+                    <p class="children-label">កូនប្រុស-ស្រី របស់យើងខ្ញុំ</p>
+                </div>
+            </section>
+
+            <!-- Parents Names Detail -->
+            <section class="parents-names-grid scroll-animate">
+                <div class="side groom-side">
+                    <h5>កូនប្រុសនាម</h5>
+                    <h3>ហួយ ណារុន</h3>
+                </div>
+                <div class="side bride-side">
+                    <h5>កូនស្រីនាម</h5>
+                    <h3>ឆយ ឧស្សា</h3>
+                </div>
+            </section>
+
+            <!-- Wedding Details -->
+            <section class="details-section scroll-animate">
+                <p>នឹងប្រព្រឹត្តទៅនៅ</p>
+                <div class="date-location">
+                    <p class="wedding-date">ថ្ងៃអាទិត្យ ទី២២ ខែមីនា ឆ្នាំ២០២៦</p>
+                    <p class="lunar-date">(ត្រូវនឹងថ្ងៃ ៤កើត ខែចេត្រ ឆ្នាំម្សាញ់ សប្តស័ក ពុទ្ធសករាជ ២៥៦៩)</p>
+                    <p class="time">វេលាម៉ោង ៥:០០ល្ងាច</p>
+                </div>
+
+                <div class="location-box">
+                    <p>នៅ គេហដ្ឋានខាងស្រី</p>
+                    <p>ភូមិចក្រី ឃុំជប់វារី ស្រុកព្រះនេត្រព្រះ</p>
+                    <p>ខេត្តបន្ទាយមានជ័យ</p>
+                    <a href="https://google.com/maps?q=13.6233356,103.1802061" target="_blank" class="map-btn"><i
+                            class="fas fa-map-marker-alt"></i> មើលទីតាំង</a>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="card-footer">
+                <!-- <p>សូមអរគុណ!</p> -->
+            </footer>
+        </div>
+    </div>
+
+    <!-- Map Section -->
+    <div id="map-card" class="card-container">
+        <h2 class="main-title program-header scroll-animate">📍 ទីតាំងពិធី</h2>
+        <!-- <p class="gallery-subtitle scroll-animate">Wedding Location</p> -->
+
+        <div class="map-address scroll-animate">
+            <p><strong>នៅ គេហដ្ឋានខាងស្រី</strong></p>
+            <p>ស្ថិតនៅ ភូមិចក្រី ឃុំជប់វារី ស្រុកព្រះនេត្រព្រះ</p>
+            <p>ខេត្តបន្ទាយមានជ័យ</p>
+            <p class="map-note">(ជាប់នឹងខាងកើតស្រះជប់)</p>
+            <p class="map-thanks">ដោយមេត្រីភាព។ សូមអរគុណ!</p>
+        </div>
+
+        <div class="map-embed scroll-animate">
+            <iframe src="https://maps.google.com/maps?q=13.6233356,103.1802061&z=15&output=embed" width="100%"
+                height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <a href="https://google.com/maps?q=13.6233356,103.1802061" target="_blank" class="map-btn-large scroll-animate">
+            <i class="fas fa-map-marker-alt"></i> បើកក្នុង Google Maps
+        </a>
+    </div>
+
+    <div id="program-card" class="card-container">
+        <h2 class="main-title program-header scroll-animate">កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍</h2>
+
+        <div class="program-list">
+            <!-- Day 1 -->
+            <h3 class="day-header scroll-animate">⭐ ថ្ងៃទី១ ៖ ថ្ងៃសៅរ៍ ទី២១ ខែមីនា ឆ្នាំ២០២៦</h3>
+            <ul class="event-list">
+                <li class="event-item scroll-animate">
+                    <span class="event-time">ម៉ោង ០១:០០ រសៀល</span>
+                    <span class="event-name">ពិធីសែនក្រុងពាលី</span>
+                </li>
+                <li class="event-item scroll-animate">
+                    <span class="event-time">ម៉ោង ០២:០០ រសៀល</span>
+                    <span class="event-name">ពិធីកាត់សក់</span>
+                </li>
+                <li class="event-item scroll-animate">
+                    <span class="event-time">ម៉ោង ០៣:០០ រសៀល</span>
+                    <span class="event-name">ពិធីសូត្រមន្តចម្រើនព្រះបរិត្ត</span>
+                </li>
+                <li class="event-item scroll-animate">
+                    <span class="event-time">ម៉ោង ០៥:៣០ ល្ងាច</span>
+                    <span class="event-name">ពិធីចែវខាន់ស្លា</span>
+                </li>
+                <li class="event-item scroll-animate">
+                    <span class="event-time">ម៉ោង ០៦:៣០ ល្ងាច</span>
+                    <span class="event-name">អញ្ជើញភ្ញៀវកិត្តិយសពិសាភោជនាហារ ពេលល្ងាច</span>
+                </li>
+            </ul>
+
+            <!-- Day 2 -->
+            <h3 class="day-header scroll-animate">⭐ ថ្ងៃទី២ ៖ ថ្ងៃអាទិត្យ ទី២២ ខែមីនា ឆ្នាំ២០២៦</h3>
+            <ul class="event-list">
+                <li class="event-item scroll-animate">
+                    <span class="event-time">ម៉ោង ០៥:០០ នាទីព្រឹក</span>
+                    <span class="event-name">ពិធីសំពះពិលា</span>
+                </li>
+                <li class="event-item scroll-animate">
+                    <span class="event-time">ម៉ោង ០៧:១០ នាទីព្រឹក</span>
+                    <span class="event-name">ពិធីហែរជំនួន(កំណត់)</span>
+                </li>
+                <li class="event-item scroll-animate">
+                    <span class="event-time">ម៉ោង ០៩:០០ នាទីព្រឹក</span>
+                    <span class="event-name">ពិធីបំពាក់ចិញ្ចៀន</span>
+                </li>
+                <li class="event-item scroll-animate">
+                    <span class="event-time">ម៉ោង ១០:០០ នាទីព្រឹក</span>
+                    <span class="event-name">ពិធីសែនចងដៃ</span>
+                </li>
+                <li class="event-item scroll-animate">
+                    <span class="event-time">ម៉ោង ១២:០០ នាទីថ្ងៃត្រង់</span>
+                    <span class="event-name">អញ្ជើញភ្ញៀវកិត្តិយសពិសាភោជនាហារថ្ងៃត្រង់</span>
+                </li>
+                <li class="event-item scroll-animate">
+                    <span class="event-time">ម៉ោង ០៥:០០ ល្ងាច</span>
+                    <span class="event-name">អញ្ជើញភ្ញៀវកិត្តិយសពិសាភោជនាហារ ពេលល្ងាច</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div id="gallery-card" class="card-container">
+        <h2 class="main-title program-header scroll-animate">វិចិត្រសាលរូបភាព</h2>
+        <!-- <p class="gallery-subtitle scroll-animate">Our Gallery</p> -->
+
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-tall scroll-animate" onclick="openLightbox(0)">
+                <img src="assets/gallery/1.jpg" alt="Wedding Photo">
+            </div>
+            <div class="gallery-item scroll-animate" onclick="openLightbox(1)">
+                <img src="assets/gallery/2.jpg" alt="Wedding Photo">
+            </div>
+            <div class="gallery-item scroll-animate" onclick="openLightbox(2)">
+                <img src="assets/gallery/3.jpg" alt="Wedding Photo">
+            </div>
+            <div class="gallery-item gallery-wide scroll-animate" onclick="openLightbox(3)">
+                <img src="assets/gallery/4.jpg" alt="Wedding Photo">
+            </div>
+            <div class="gallery-item scroll-animate" onclick="openLightbox(4)">
+                <img src="assets/gallery/5.jpg" alt="Wedding Photo">
+            </div>
+            <div class="gallery-item scroll-animate" onclick="openLightbox(5)">
+                <img src="assets/gallery/6.jpg" alt="Wedding Photo">
+            </div>
+            <div class="gallery-item gallery-tall scroll-animate" onclick="openLightbox(6)">
+                <img src="assets/gallery/7.jpg" alt="Wedding Photo">
+            </div>
+            <div class="gallery-item scroll-animate" onclick="openLightbox(7)">
+                <img src="assets/gallery/8.jpg" alt="Wedding Photo">
+            </div>
+            <div class="gallery-item gallery-wide scroll-animate" onclick="openLightbox(8)">
+                <img src="assets/gallery/9.jpg" alt="Wedding Photo">
+            </div>
+            <div class="gallery-item gallery-wide scroll-animate" onclick="openLightbox(9)">
+                <img src="assets/gallery/10.jpg" alt="Wedding Photo">
+            </div>
+        </div>
+
+        <!-- Thank You Section -->
+        <div id="thank-you-card" class="card-container">
+            <h2 class="main-title program-header scroll-animate" style="font-size: 1.6rem; margin-bottom: 20px;">
+                សេចក្ដីថ្លែងអំណរគុណ</h2>
+            <div class="thank-you-content scroll-animate">
+                <p>យើងខ្ញុំជាមាតាបិតាកូនប្រុស កូនស្រីសូមថ្លែងអំណរគុណយ៉ាងជ្រាលជ្រៅ
+                    ចំពោះការអញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយសក្នុងពិធីអាពាហ៍ពិពាហ៍</p>
+                <p>សូមថ្លែងអំណរគុណ យ៉ាងជ្រាលជ្រៅចំពោះការអញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយសក្នុង ពិធីអាពាហ៍ពិពាហ៍
+                    កូនប្រុស-កូនស្រី របស់យើងខ្ញុំ សូមមានសេចក្តីសុខ សុភមង្គលគ្រប់ពេលវេលាកុំបីឃ្លៀងឃ្លាតឡើយ។</p>
+                <p style="margin-top: 10px; font-weight: bold;">សូមអរគុណ!</p>
+
+                <p style="margin-top: 20px;">យើងខ្ញុំ សូមអភ័យទោសដោយពុំបានជួបអញ្ជើញដោយផ្ទាល់។
+                    វត្តមានរបស់ ឯកឧត្តម លោកឧកញ៉ា លោកជំទាវ លោកស្រី អ្នកនាងកញ្ញា និងប្រិយមិត្តទាំងអស់គឺជា
+                    កិត្តិយសដ៏ឧត្តុង្គឧត្តមសម្រាប់គ្រួសារយើងខ្ញុំ។</p>
+                <p style="margin-top: 10px; font-weight: bold;">សូមអរគុណ!</p>
+            </div>
+        </div>
+
+        <!-- Digital Gift Section -->
+        <div id="digital-gift-card" class="card-container">
+            <h2 class="main-title program-header scroll-animate" style="font-size: 1.6rem; margin-bottom: 20px;">
+                ចំណងដៃឌីជីថល</h2>
+
+            <p class="gift-text scroll-animate">
+                ភ្ញៀវកិត្តិយសអាចចងចំណងដៃ ដោយគ្រាន់តែស្កែន QR code ខាងក្រោម
+            </p>
+
+
+
+
+
+            <div class="qr-container scroll-animate">
+                <div class="qr-tabs">
+                    <button class="qr-tab active" data-target="us">ដុល្លារ</button>
+                    <button class="qr-tab" data-target="kh">រៀល</button>
+                </div>
+                <div class="qr-content active" id="qr-us">
+                    <img src="assets/qrcode_us.jpeg" alt="QR Code" class="qr-code-img">
+                    <div class="account-info">
+                        <p class="account-label">ម្ចាស់គណនី</p>
+                        <p class="account-name">HOUY N. & CHHY O.</p>
+                    </div>
+                </div>
+                <div class="qr-content" id="qr-kh">
+                    <img src="assets/qrcode_kh.jpeg" alt="QR Code" class="qr-code-img">
+                    <div class="account-info">
+                        <p class="account-label">ម្ចាស់គណនី</p>
+                        <p class="account-name">CHHY OUKSA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox-overlay">
+            <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
+            <div class="lightbox-arrow lightbox-prev" onclick="changeLightbox(-1)">&#10094;</div>
+            <div class="lightbox-arrow lightbox-next" onclick="changeLightbox(1)">&#10095;</div>
+            <div class="lightbox-content">
+                <img id="lightbox-img" src="" alt="Gallery Photo">
+                <div class="lightbox-counter" id="lightbox-counter">1 / 6</div>
+            </div>
+            <div class="lightbox-thumbnails" id="lightbox-thumbnails"></div>
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer">
+            <p>Made with ❤️ for Narun & Ouksa</p>
+        </div>
+
+        <!-- Background Music -->
+        <audio id="bg-music" src="assets/bg-music.mp3" loop preload="auto" autoplay></audio>
+
+        <!-- Back to Top Button -->
+        <div id="back-to-top" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+
+        <!-- Floating Audio Control -->
+        <div class="audio-control" id="audio-toggle">
+            <i class="fas fa-music"></i>
+        </div>
+
+
+
+        <script src="script.js"></script>
+</body>
+
+</html>
